@@ -60,18 +60,25 @@ export default function CTASection() {
         };
     })(window, 'https://app.cal.com/embed/embed.js', 'init');
 
-    window.Cal('init', 'horizonwebworx', { origin: 'https://app.cal.com' });
+    // Initialize Cal.com with a slight delay to ensure script loads
+    const timer = setTimeout(() => {
+      if (window.Cal) {
+        window.Cal('init', 'horizonwebworx', { origin: 'https://app.cal.com' });
 
-    window.Cal.ns.horizonwebworx('inline', {
-      elementOrSelector: '#my-cal-inline-horizonwebworx',
-      config: { layout: 'month_view' },
-      calLink: 'horizon-webworx-knoryb/horizonwebworx',
-    });
+        window.Cal.ns.horizonwebworx('inline', {
+          elementOrSelector: '#my-cal-inline-horizonwebworx',
+          config: { layout: 'month_view' },
+          calLink: 'horizon-webworx-knoryb/horizonwebworx',
+        });
 
-    window.Cal.ns.horizonwebworx('ui', {
-      hideEventTypeDetails: false,
-      layout: 'month_view',
-    });
+        window.Cal.ns.horizonwebworx('ui', {
+          hideEventTypeDetails: false,
+          layout: 'month_view',
+        });
+      }
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (

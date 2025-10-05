@@ -14,11 +14,37 @@ body {
   color: #fff;
   overflow-x: hidden;
   cursor: crosshair;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Smooth scrolling */
+/* Smooth scrolling with GPU acceleration */
 html {
   scroll-behavior: smooth;
+}
+
+* {
+  will-change: auto;
+}
+
+/* Performance optimizations */
+img, picture, video, canvas, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* GPU acceleration for animations */
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-padding-top: 2rem;
+  }
+
+  * {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
 }
 
 /* Custom scrollbar */
@@ -37,4 +63,15 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #cc0000;
+}
+
+/* Optimize animations for mobile */
+@media (max-width: 768px) {
+  * {
+    animation-duration: 0.5s !important;
+  }
+
+  html {
+    scroll-padding-top: 1rem;
+  }
 }

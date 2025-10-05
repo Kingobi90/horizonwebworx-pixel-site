@@ -1,17 +1,20 @@
+import { lazy, Suspense } from 'react';
 import { LanguageProvider } from './context/LanguageContext';
 import CRTEffect from './components/CRTEffect';
 import Navigation from './components/Navigation';
 import SEOHead from './components/SEOHead';
 import HeroSection from './components/HeroSection';
-import AboutSection from './components/AboutSection';
-import ServicesSection from './components/ServicesSection';
-import PortfolioSection from './components/PortfolioSection';
-import PricingSection from './components/PricingSection';
-import StatsSection from './components/StatsSection';
-import BlogSection from './components/BlogSection';
-import ContactSection from './components/ContactSection';
-import CTASection from './components/CTASection';
-import Footer from './components/Footer';
+
+// Lazy load non-critical components
+const AboutSection = lazy(() => import('./components/AboutSection'));
+const ServicesSection = lazy(() => import('./components/ServicesSection'));
+const PortfolioSection = lazy(() => import('./components/PortfolioSection'));
+const PricingSection = lazy(() => import('./components/PricingSection'));
+const StatsSection = lazy(() => import('./components/StatsSection'));
+const BlogSection = lazy(() => import('./components/BlogSection'));
+const ContactSection = lazy(() => import('./components/ContactSection'));
+const CTASection = lazy(() => import('./components/CTASection'));
+const Footer = lazy(() => import('./components/Footer'));
 
 function App() {
   return (
@@ -23,15 +26,17 @@ function App() {
 
         <div className="relative z-[4]">
           <HeroSection />
-          <ServicesSection />
-          <AboutSection />
-          <PortfolioSection />
-          <StatsSection />
-          <PricingSection />
-          <BlogSection />
-          <ContactSection />
-          <CTASection />
-          <Footer />
+          <Suspense fallback={<div className="min-h-screen" />}>
+            <ServicesSection />
+            <AboutSection />
+            <PortfolioSection />
+            <StatsSection />
+            <PricingSection />
+            <BlogSection />
+            <ContactSection />
+            <CTASection />
+            <Footer />
+          </Suspense>
         </div>
       </div>
     </LanguageProvider>
