@@ -1,0 +1,22 @@
+{
+  "name": "HorizonWebWorX - Automation & AI Tools",
+  "short_name": "HorizonWebWorX",
+  "description": "Automation-driven websites, web apps, and AI tools for fashion/retail businesses",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#E41E26",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "utilities"],
+  "lang": "en-US",
+  "scope": "/",
+  "id": "horizonwebworx-app"
+}

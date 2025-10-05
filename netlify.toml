@@ -1,0 +1,87 @@
+[build]
+  command = "npm run generate-sitemap && npm run build:static"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Redirects for canonical URLs
+[[redirects]]
+  from = "https://www.horizonwebworx.com/*"
+  to = "https://horizonwebworx.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://horizonwebworx.com/*"
+  to = "https://horizonwebworx.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.horizonwebworx.com/*"
+  to = "https://horizonwebworx.com/:splat"
+  status = 301
+  force = true
+
+# SPA fallback for client-side routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.cal.com https://api.sendgrid.com https://www.google-analytics.com"
+
+# Cache static assets
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache images
+[[headers]]
+  for = "*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "*.jpeg"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# Functions configuration
+[functions]
+  directory = "netlify/functions"
+
+# Edge functions
+[edge_functions]
+  directory = "netlify/edge-functions"

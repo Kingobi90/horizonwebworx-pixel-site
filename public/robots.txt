@@ -1,0 +1,10 @@
+# robots.txt for HorizonWebWorX
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://horizonwebworx.com/sitemap.xml
+
+# Block access to admin areas if any
+Disallow: /admin/
+Disallow: /*.json$

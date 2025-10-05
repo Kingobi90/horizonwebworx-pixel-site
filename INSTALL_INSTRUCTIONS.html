@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Install Node.js - HorizonWebWorx</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        h2 {
+            color: #764ba2;
+            margin: 2rem 0 1rem;
+            font-size: 1.5rem;
+        }
+        .alert {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        .success {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        .step {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        .step h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Courier New', monospace;
+        }
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            overflow-x: auto;
+            font-family: 'Monaco', 'Courier New', monospace;
+        }
+        .btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 1rem 0.5rem 1rem 0;
+            transition: transform 0.2s;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            background: #5568d3;
+        }
+        .emoji {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+        ul {
+            margin-left: 2rem;
+            line-height: 1.8;
+        }
+        p {
+            line-height: 1.6;
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><span class="emoji">🎮</span>HorizonWebWorx Setup</h1>
+        
+        <div class="alert">
+            <strong>⚠️ Node.js Required</strong><br>
+            Node.js is not installed on your system. Follow the steps below to get started!
+        </div>
+
+        <h2><span class="emoji">✅</span>Recommended: Official Installer</h2>
+        
+        <div class="step">
+            <h3>Step 1: Download Node.js</h3>
+            <p>Click the button below to download Node.js LTS (Long Term Support):</p>
+            <a href="https://nodejs.org" class="btn" target="_blank">Download Node.js from nodejs.org</a>
+            <p><small>Choose the <strong>LTS version</strong> (green button on the website)</small></p>
+        </div>
+
+        <div class="step">
+            <h3>Step 2: Install Node.js</h3>
+            <ul>
+                <li>Open the downloaded <code>.pkg</code> file</li>
+                <li>Follow the installation wizard</li>
+                <li>Click "Continue" → "Install"</li>
+                <li>Enter your Mac password when prompted</li>
+                <li>Wait for installation to complete</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>Step 3: Verify Installation</h3>
+            <p>Open Terminal (Applications → Utilities → Terminal) and run:</p>
+            <div class="code-block">node --version</div>
+            <p>You should see: <code>v20.x.x</code> or <code>v18.x.x</code></p>
+        </div>
+
+        <div class="step">
+            <h3>Step 4: Run the Project</h3>
+            <p>In Terminal, run these commands:</p>
+            <div class="code-block">cd /Users/obinna.c/CascadeProjects/horizonwebworx
+npm install
+npm run dev</div>
+            <p>The site will open at: <strong>http://localhost:5173</strong> 🚀</p>
+        </div>
+
+        <div class="success">
+            <strong>✅ What You'll See</strong><br>
+            Once running, you'll see a retro arcade-themed landing page with:
+            <ul style="margin-top: 0.5rem;">
+                <li>CRT screen effects with scanlines</li>
+                <li>3D animated geometric shapes</li>
+                <li>Floating navigation bar</li>
+                <li>"Player One Ready?" hero section</li>
+                <li>Services grid with hover effects</li>
+                <li>Statistics display</li>
+                <li>Complete footer</li>
+            </ul>
+        </div>
+
+        <h2><span class="emoji">🔧</span>Alternative: Homebrew Method</h2>
+        
+        <div class="step">
+            <p>If you prefer using Homebrew (package manager for Mac):</p>
+            <div class="code-block"># Install Homebrew first (if not installed)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Then install Node.js
+brew install node</div>
+        </div>
+
+        <h2><span class="emoji">🚨</span>Troubleshooting</h2>
+        
+        <div class="step">
+            <h3>"command not found: node" after installation</h3>
+            <p><strong>Solution:</strong> Close and reopen Terminal. The PATH needs to be refreshed.</p>
+        </div>
+
+        <div class="step">
+            <h3>Installation hangs or fails</h3>
+            <ul>
+                <li>Check your internet connection</li>
+                <li>Make sure you have ~500MB free disk space</li>
+                <li>Restart your Mac and try again</li>
+            </ul>
+        </div>
+
+        <h2><span class="emoji">📋</span>Quick Command Reference</h2>
+        
+        <div class="code-block"># Navigate to project
+cd /Users/obinna.c/CascadeProjects/horizonwebworx
+
+# Install dependencies (first time only)
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Stop server: Press Ctrl+C in Terminal</div>
+
+        <div class="success" style="margin-top: 2rem;">
+            <strong>📞 Need More Help?</strong><br>
+            Check these files in the project folder:
+            <ul style="margin-top: 0.5rem;">
+                <li><code>INSTALL_NODEJS.md</code> - Detailed installation guide</li>
+                <li><code>QUICKSTART.md</code> - Quick start guide</li>
+                <li><code>README_ARCADE.md</code> - Full documentation</li>
+                <li><code>DEPLOYMENT_GUIDE.md</code> - Deployment instructions</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 2px solid #eee;">
+            <p><strong>Ready to level up? Install Node.js and let's go! 🚀</strong></p>
+        </div>
+    </div>
+</body>
+</html>
