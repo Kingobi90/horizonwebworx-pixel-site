@@ -12,7 +12,7 @@ functionsDirectoryOrigin = "config"
 publish = "/Users/obinna.c/CascadeProjects/horizonwebworx/dist"
 publishOrigin = "config"
 commandOrigin = "config"
-command = "npm run generate-sitemap && npm run build:static"
+command = "npm run build"
 functions = "/Users/obinna.c/CascadeProjects/horizonwebworx/netlify/functions"
 
 [build.environment]
