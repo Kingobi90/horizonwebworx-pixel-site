@@ -33,10 +33,10 @@ export default function Navigation() {
         {/* Logo */}
         <div className="flex items-center gap-2 md:gap-3">
           <div className="w-8 h-8 md:w-10 md:h-10 bg-red-600 rounded-full flex-shrink-0 animate-pulse-glow" />
-          <span className="text-[0.5rem] md:text-xl text-white font-['Press_Start_2P'] drop-shadow-[3px_3px_0_#ff0000,-1px_-1px_0_#888] hidden sm:block">
+          <span className="text-[0.5rem] md:text-xl text-white font-arcade drop-shadow-[3px_3px_0_#ff0000,-1px_-1px_0_#888] hidden sm:block">
             HORIZONWEBWORX
           </span>
-          <span className="text-[0.5rem] text-white font-['Press_Start_2P'] drop-shadow-[3px_3px_0_#ff0000,-1px_-1px_0_#888] sm:hidden">
+          <span className="text-[0.5rem] text-white font-arcade drop-shadow-[3px_3px_0_#ff0000,-1px_-1px_0_#888] sm:hidden">
             HWX
           </span>
         </div>
