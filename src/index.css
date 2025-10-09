@@ -65,12 +65,8 @@ img, picture, video, canvas, svg {
   background: #cc0000;
 }
 
-/* Optimize animations for mobile */
+/* Mobile adjustments */
 @media (max-width: 768px) {
-  * {
-    animation-duration: 0.5s !important;
-  }
-
   html {
     scroll-padding-top: 1rem;
   }
