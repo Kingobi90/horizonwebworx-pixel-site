@@ -98,8 +98,29 @@ ${formData.message}
   };
 
   return (
-    <div className="min-h-screen bg-black text-white pt-32 pb-16 px-8">
-      <div className="max-w-[800px] mx-auto">
+    <div className="min-h-screen bg-black text-white pt-32 pb-16 px-8 relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30 animate-bg-zoom"
+        style={{
+          backgroundImage: 'url(/images/bg3.png)',
+          backgroundSize: 'cover',
+        }}
+      />
+      
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/70" />
+      
+      {/* Animated grid background */}
+      <div
+        className="absolute inset-0 animate-grid-move"
+        style={{
+          background:
+            'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 0, 0, 0.03) 2px, rgba(255, 0, 0, 0.03) 4px), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255, 0, 0, 0.03) 2px, rgba(255, 0, 0, 0.03) 4px)',
+        }}
+      />
+
+      <div className="max-w-[800px] mx-auto relative z-10">
         {/* Back Button */}
         <button
           onClick={() => navigate('/')}
