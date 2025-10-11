@@ -1,13 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
+    './index.html',
     './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
       fontFamily: {
-        arcade: ["'Press Start 2P'"],
-        sans: ['Inter'],
+        arcade: ['"Press Start 2P"', 'cursive'],
       },
       animation: {
         'flicker': 'flicker 0.15s infinite',
