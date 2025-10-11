@@ -31,8 +31,11 @@ const SEO = ({
       'og:type': ogType,
       'og:url': canonicalUrl,
       'og:image': `https://horizonwebworx.com${ogImage}`,
-      'og:image:width': '1200',
-      'og:image:height': '630',
+      'og:image:secure_url': `https://horizonwebworx.com${ogImage}`,
+      'og:image:type': 'image/png',
+      'og:image:width': '1024',
+      'og:image:height': '1024',
+      'og:image:alt': title,
       'og:site_name': 'HorizonWebWorx',
       'og:locale': 'en_US',
       
