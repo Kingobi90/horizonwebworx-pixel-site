@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const services = [
   {
@@ -36,6 +37,11 @@ const services = [
 function ServiceCard({ service, index }) {
   const [isVisible, setIsVisible] = useState(false);
   const cardRef = useRef(null);
+  const navigate = useNavigate();
+
+  const handleServiceClick = () => {
+    navigate('/contact', { state: { service: service.value } });
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -59,9 +65,9 @@ function ServiceCard({ service, index }) {
   }, []);
 
   return (
-    <a
-      href={`#contact?service=${encodeURIComponent(service.value)}`}
+    <div
       ref={cardRef}
+      onClick={handleServiceClick}
       className={`block p-8 border-[3px] border-white bg-black/90 transition-all duration-300 overflow-hidden shadow-[0_0_15px_rgba(255,255,255,0.1)] relative hover:scale-[1.08] hover:-rotate-1 hover:border-red-600 hover:shadow-[0_10px_40px_rgba(255,0,0,0.4)] hover:bg-red-600/5 cursor-pointer ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
       }`}
@@ -87,7 +93,7 @@ function ServiceCard({ service, index }) {
       <p className="text-[0.6rem] leading-[1.8] text-gray-400 font-mono relative z-10 whitespace-pre-line">
         {service.description}
       </p>
-    </a>
+    </div>
   );
 }
 

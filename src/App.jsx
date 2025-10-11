@@ -1,35 +1,38 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import CRTEffect from './components/CRTEffect'
-import ThreeBackground from './components/ThreeBackground'
 import Navigation from './components/Navigation'
-import HeroSection from './components/HeroSection'
-import ServicesSection from './components/ServicesSection'
-import StatsSection from './components/StatsSection'
-import CTASection from './components/CTASection'
-import Footer from './components/Footer'
+import SEO from './components/SEO'
+import HomePage from './components/HomePage'
+import ContactPage from './components/ContactPage'
+import BlogPage from './components/BlogPage'
+import PricingPage from './components/PricingPage'
+import AboutPage from './components/AboutPage'
+import PortfolioPage from './components/PortfolioPage'
 
 function App() {
   return (
-    <div className="relative min-h-screen bg-black text-white font-arcade overflow-x-hidden">
-      {/* CRT Screen Effect */}
-      <CRTEffect />
-      
-      {/* 3D Background */}
-      <ThreeBackground />
-      
-      {/* Navigation */}
-      <Navigation />
-      
-      {/* Main Content */}
-      <main className="relative z-10">
-        <HeroSection />
-        <ServicesSection />
-        <StatsSection />
-        <CTASection />
-      </main>
-      
-      {/* Footer */}
-      <Footer />
-    </div>
+    <Router>
+      <div className="relative min-h-screen bg-black text-white font-arcade overflow-x-hidden">
+        {/* SEO Component */}
+        <SEO />
+        
+        {/* CRT Screen Effect */}
+        <CRTEffect />
+        
+        {/* Navigation */}
+        <Navigation />
+        
+        {/* Routes */}
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/portfolio" element={<PortfolioPage />} />
+        </Routes>
+      </div>
+    </Router>
   )
 }
 

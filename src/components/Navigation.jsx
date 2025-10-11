@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function Navigation() {
@@ -13,13 +14,17 @@ export default function Navigation() {
     ZH: '中文',
   };
 
+  const navigate = useNavigate();
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
   const menuItems = [
-    { href: '#services', label: t('services') },
-    { href: '#about', label: t('about') },
-    { href: '#portfolio', label: t('portfolio') },
-    { href: '#pricing', label: t('pricing') },
-    { href: '#blog', label: t('blog') },
-    { href: '#contact', label: t('contact') },
+    { href: '#services', label: t('services'), type: 'anchor' },
+    { href: '/pricing', label: t('pricing'), type: 'route' },
+    { href: '/portfolio', label: t('portfolio'), type: 'route' },
+    { href: '/about', label: t('about'), type: 'route' },
+    { href: '/blog', label: t('blog'), type: 'route' },
+    { href: '/contact', label: t('contact'), type: 'route' },
   ];
 
   const handleLanguageChange = (lang) => {
@@ -44,13 +49,32 @@ export default function Navigation() {
         {/* Desktop Menu */}
         <div className="hidden lg:flex gap-6 text-[0.6rem]">
           {menuItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="text-white hover:text-red-600 transition-colors"
-            >
-              {item.label}
-            </a>
+            item.type === 'route' ? (
+              <Link
+                key={item.href}
+                to={item.href}
+                className="text-white hover:text-red-600 transition-colors"
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <a
+                key={item.href}
+                href={isHomePage ? item.href : `/${item.href}`}
+                onClick={(e) => {
+                  if (!isHomePage) {
+                    e.preventDefault();
+                    navigate('/');
+                    setTimeout(() => {
+                      document.querySelector(item.href)?.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                  }
+                }}
+                className="text-white hover:text-red-600 transition-colors"
+              >
+                {item.label}
+              </a>
+            )
           ))}
         </div>
 
@@ -98,14 +122,34 @@ export default function Navigation() {
         <div className="fixed top-24 left-1/2 -translate-x-1/2 z-[999] w-[95%] md:max-w-[90%] lg:hidden border-4 border-red-600 bg-black/95 backdrop-blur-sm">
           <div className="flex flex-col">
             {menuItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={() => setIsMenuOpen(false)}
-                className="px-6 py-4 text-white text-[0.7rem] border-b-2 border-red-600/30 hover:bg-red-600/20 transition-colors"
-              >
-                {item.label}
-              </a>
+              item.type === 'route' ? (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="px-6 py-4 text-white text-[0.7rem] border-b-2 border-red-600/30 hover:bg-red-600/20 transition-colors"
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <a
+                  key={item.href}
+                  href={isHomePage ? item.href : `/${item.href}`}
+                  onClick={(e) => {
+                    setIsMenuOpen(false);
+                    if (!isHomePage) {
+                      e.preventDefault();
+                      navigate('/');
+                      setTimeout(() => {
+                        document.querySelector(item.href)?.scrollIntoView({ behavior: 'smooth' });
+                      }, 100);
+                    }
+                  }}
+                  className="px-6 py-4 text-white text-[0.7rem] border-b-2 border-red-600/30 hover:bg-red-600/20 transition-colors"
+                >
+                  {item.label}
+                </a>
+              )
             ))}
           </div>
         </div>

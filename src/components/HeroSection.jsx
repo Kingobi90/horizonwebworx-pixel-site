@@ -1,4 +1,10 @@
 export default function HeroSection() {
+  const handleStartGame = () => {
+    const servicesSection = document.querySelector('#services');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <section className="min-h-screen flex flex-col justify-center items-center text-center px-8 relative overflow-hidden bg-gradient-to-b from-[#1a0000] via-[#330000] to-black animate-section-fade-in">
       {/* Background Image */}
@@ -33,12 +39,12 @@ export default function HeroSection() {
           WITH LEGENDARY WEB SOLUTIONS
         </p>
         <div className="flex flex-wrap justify-center gap-4">
-          <a
-            href="#services"
+          <button
+            onClick={handleStartGame}
             className="inline-block px-8 py-6 my-4 bg-gradient-to-b from-red-600 to-red-900 border-[3px] border-red-600 text-white no-underline text-[0.8rem] font-arcade shadow-[0_5px_0_#550000,0_0_20px_rgba(255,0,0,0.5)] transition-all duration-100 relative cursor-pointer animate-button-float hover:translate-y-[3px] hover:shadow-[0_2px_0_#550000,0_0_30px_rgba(255,0,0,0.8)]"
           >
-            ▶ START GAME
-          </a>
+            ▶ LEVEL UP
+          </button>
           <a
             href="#contact"
             className="inline-block px-8 py-6 my-4 bg-gradient-to-b from-red-600 to-red-900 border-[3px] border-red-600 text-white no-underline text-[0.8rem] font-arcade shadow-[0_5px_0_#550000,0_0_20px_rgba(255,0,0,0.5)] transition-all duration-100 relative cursor-pointer animate-button-float hover:translate-y-[3px] hover:shadow-[0_2px_0_#550000,0_0_30px_rgba(255,0,0,0.8)]"

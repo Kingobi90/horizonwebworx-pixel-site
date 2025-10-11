@@ -127,7 +127,7 @@ export default function CTASection() {
               href="#contact"
               className="inline-block px-8 py-6 my-4 bg-gradient-to-b from-red-600 to-red-900 border-[3px] border-red-600 text-white no-underline text-[0.8rem] shadow-[0_5px_0_#550000,0_0_20px_rgba(255,0,0,0.5)] transition-all duration-100 relative cursor-pointer hover:translate-y-[3px] hover:shadow-[0_2px_0_#550000,0_0_30px_rgba(255,0,0,0.8)]"
             >
-              🎮 START YOUR PROJECT
+              🚀 LEVEL UP YOUR BUSINESS
             </a>
           </div>
 
