@@ -63,10 +63,10 @@ export function BookingSection() {
 
   const handleContinueToDetails = () => {
     if (selectedDate && selectedTime) {
-      hwxTrack('booking_datetime_selected', {
-        date: selectedDate.toISOString(),
-        time: selectedTime,
-      })
+      // hwxTrack('booking_datetime_selected', {
+      //   date: selectedDate.toISOString(),
+      //   time: selectedTime,
+      // })
       setStep('details')
     }
   }
@@ -78,14 +78,14 @@ export function BookingSection() {
     try {
       // In a real app, this would integrate with Cal.com API and SendGrid
       await new Promise(resolve => setTimeout(resolve, 2000)) // Simulate API call
-      
-      hwxTrack('booking_completed', {
-        date: selectedDate?.toISOString(),
-        time: selectedTime,
-        name: formData.name,
-        company: formData.company,
-      })
-      
+
+      // hwxTrack('booking_completed', {
+      //   date: selectedDate?.toISOString(),
+      //   time: selectedTime,
+      //   name: formData.name,
+      //   company: formData.company,
+      // })
+
       setStep('confirmation')
     } catch (error) {
       console.error('Booking failed:', error)

@@ -140,8 +140,9 @@ export default function CTASection() {
               id="my-cal-inline-horizonwebworx"
               style={{
                 width: '100%',
-                height: '600px',
-                overflow: 'auto',
+                minHeight: '600px',
+                height: 'auto',
+                overflow: 'visible',
               }}
             ></div>
           </div>
