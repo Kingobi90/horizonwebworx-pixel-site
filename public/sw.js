@@ -1,11 +1,12 @@
-const CACHE_NAME = 'horizonwebworx-v1';
+const CACHE_NAME = 'horizonwebworx-v3';
 const urlsToCache = [
   '/',
   '/index.html',
   '/hero-bg.png',
   '/about-bg.png',
   '/images/bg1.png',
-  '/images/bg2.png',
+  '/images/bg2.png'
+  // Do not cache font files - always load them fresh
 ];
 
 self.addEventListener('install', (event) => {
@@ -17,6 +18,12 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
+  // Skip caching for font resources
+  if (event.request.url.includes('fonts.googleapis.com') || 
+      event.request.url.includes('fonts.gstatic.com')) {
+    return;
+  }
+  
   event.respondWith(
     caches.match(event.request).then((response) => {
       if (response) {
