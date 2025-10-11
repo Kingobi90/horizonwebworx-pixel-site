@@ -1,93 +1,86 @@
-# HorizonWebWorX - Modern SEO-Optimized Website
+# HorizonWebWorX | Retro Arcade Landing Page
 
-A modern, SEO-optimized website for HorizonWebWorX built with React 18, Next.js 14, and Tailwind CSS 3.4+. Features a unique horizontal scrolling experience and is optimized for Core Web Vitals.
+A stunning retro arcade-themed landing page with 3D animations, CRT effects, and pixel-perfect design.
 
-##  Features
+## 🚀 Quick Start
 
-- **Modern Tech Stack**: React 18, Next.js 14 (App Router), TypeScript, Tailwind CSS 3.4+
-- **Signature Scroll Experience**: Vertical scroll drives horizontal sliding sections
-- **SEO Optimized**: Dynamic meta tags, JSON-LD schema, sitemap generation
-- **Core Web Vitals**: Optimized for LCP < 2.5s, INP < 100ms, CLS < 0.1
-- **Mobile-First Design**: Responsive and accessible UI components
-- **Glass Morphism UI**: Modern glass card components with backdrop blur
-- **Dark Mode Support**: System-aware theme toggle with persistence
-- **Static Export**: Netlify-ready with canonical redirects and security headers
+```bash
+# Install dependencies
+npm install
 
-##  Architecture
+# Run development server
+npm run dev
 
-project/
+# Build for production
+npm run build
+```
+
+Visit `http://localhost:5173` after running `npm run dev`.
+
+## ✨ Features
+
+- 🎮 **Retro Arcade Aesthetic** - CRT screen effects, scanlines, and pixel art styling
+- 🎨 **3D Background** - Dynamic Three.js animated geometric shapes
+- 📱 **Fully Responsive** - Optimized for all devices
+- ⚡ **Lightning Fast** - Built with Vite for instant HMR
+- 🎯 **Smooth Animations** - Custom Tailwind animations throughout
+- 🌐 **Multi-language** - EN, FR, ES, ZH support
+- 📅 **Cal.com Integration** - Built-in booking calendar
+
+## 🛠️ Tech Stack
+
+- **Framework**: React 18.2.0
+- **Build Tool**: Vite 5.4.10
+- **Styling**: Tailwind CSS 3.4.7
+- **3D Graphics**: Three.js 0.160.0
+- **Font**: Press Start 2P (Google Fonts)
+
+## 📁 Project Structure
+
+```
+horizonwebworx/
 ├── src/
-│   ├── app/                 # Next.js App Router pages
-│   ├── components/          # Reusable UI components
-│   │   ├── ui/             # Base UI components (Button, Card, etc.)
-│   │   ├── sections/       # Page sections (Hero, Pricing, etc.)
-│   │   └── navigation/     # Navigation components
-│   ├── lib/                # Utilities and configurations
-│   └── styles/             # Global styles and Tailwind config
-├── public/                 # Static assets
-├── scripts/                # Build and utility scripts
-└── netlify.toml           # Netlify deployment configuration
+│   ├── components/       # React components (arcade themed)
+│   ├── context/          # Language context
+│   ├── App.jsx           # Main app component
+│   ├── main.jsx          # React entry point
+│   └── index.css         # Global styles + Tailwind
+├── public/               # Static assets
+├── index.html            # HTML template
+├── vite.config.js        # Vite configuration
+└── tailwind.config.js    # Tailwind + animations
+```
 
-##  Design System
+## 🎨 Customization
 
-### Brand Colors
-- **Primary**: `#0F0F10` (Dark charcoal)
-- **Accent**: `#E41E26` (Brand red)
-- **Background**: `#FFFFFF` (Light) / `#0A0A0A` (Dark)
-- **Text**: `#0B0B0B` (Light) / `#F5F5F5` (Dark)
+### Update Content
+- **Hero**: `src/components/HeroSection.jsx`
+- **Services**: `src/components/ServicesSection.jsx`
+- **Stats**: `src/components/StatsSection.jsx`
+- **Footer**: `src/components/Footer.jsx`
 
-### Components
-- **GlassCard**: Glass morphism cards with backdrop blur
-- **Section**: Responsive container with consistent spacing
-- **Button**: Multiple variants with loading states
-- **Badge**: Status and category indicators
-- **Calendar**: Interactive booking calendar
-- **HorizontalScroll**: Signature scroll experience
+### Styling
+- Colors: Update component files or `tailwind.config.js`
+- Animations: Edit `tailwind.config.js` keyframes
+- Global styles: `src/index.css`
 
-##  Signature Scroll Experience
-The unique horizontal scroll feature works as follows:
+## 🌐 Deployment
 
-1. **Hero Section** (0-100vh): Normal vertical scrolling
-2. **Horizontal Sections** (100vh+): Vertical scroll drives horizontal movement
-3. **Smooth Transitions**: 60fps animations with GPU acceleration
-4. **Accessibility**: Respects `prefers-reduced-motion`
+```bash
+npm run build
+```
 
-### SEO Features
-- Dynamic meta tags per route
-- Open Graph and Twitter Cards
-- JSON-LD structured data
-- Automatic sitemap generation
-- Canonical URLs
-- Breadcrumb markup
+Deploy the `dist/` folder to:
+- **Netlify**: Drag & drop
+- **Vercel**: Connect repo
+- **GitHub Pages**: Push to gh-pages
+- **Any CDN**: Upload dist contents
 
-### Performance Optimizations
-- Static export for fast loading
-- Image optimization
-- Code splitting
-- Lazy loading
-- GPU-accelerated animations
-- Minimal JavaScript bundles
+## 📞 Support
 
-### Core Web Vitals Targets
-- **LCP**: < 2.5 seconds
-- **INP**: < 100 milliseconds  
-- **CLS**: < 0.1
+- **Email**: admin@horizonwebworx.com
+- **Phone**: +1 (438) 531-6242
 
-##  Browser Support
+## 📄 License
 
-- Chrome 90+
-- Firefox 88+
-- Safari 14+
-- Edge 90+
-
-##  License
-
-  2024 HorizonWebWorX. All rights reserved.
-
-##  Contributing
-
-This is a client project. For support or modifications, contact the HorizonWebWorX team.
-
----
-
-**Built with  by the HorizonWebWorX team**
+All rights reserved © 2025 HorizonWebWorX
